@@ -24,8 +24,5 @@ RUN mkdir -p /app/xmrig && \
 # Set the XMRig path environment variable
 ENV XMRIG_PATH=/app/xmrig/xmrig
 
-# Create volume for logs and state files
-VOLUME ["/app/logs"]
-
 # Run the miner
 CMD ["python", "miner.py"]
