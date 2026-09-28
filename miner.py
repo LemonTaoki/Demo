@@ -43,7 +43,7 @@ POOL_HOST = "pool.hashvault.pro"
 POOL_PORT = 443
 
 # Public receiving address only. Never put a seed phrase or private key here.
-WALLET_ADDRESS = "YOUR_PUBLIC_MONERO_WALLET_ADDRESS"
+WALLET_ADDRESS = "835P6vhLc9WWDDxyZhGqCn6PNS7oYGrijFQ4i3haZqL1bkHPVyoScPuS5pauL5ep8G5tnc74i1g4r8mZzkhD6DWDGwi8UNF"
 WORKER_NAME = "python-controller"
 THREAD_COUNT = 1
 
