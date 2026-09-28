@@ -43,12 +43,16 @@ POOL_HOST = "pool.hashvault.pro"
 POOL_PORT = 443
 
 # Public receiving address only. Never put a seed phrase or private key here.
-WALLET_ADDRESS = "835P6vhLc9WWDDxyZhGqCn6PNS7oYGrijFQ4i3haZqL1bkHPVyoScPuS5pauL5ep8G5tnc74i1g4r8mZzkhD6DWDGwi8UNF"
+WALLET_ADDRESS = os.getenv("WALLET_ADDRESS", "835P6vhLc9WWDDxyZhGqCn6PNS7oYGrijFQ4i3haZqL1bkHPVyoScPuS5pauL5ep8G5tnc74i1g4r8mZzkhD6DWDGwi8UNF")
 WORKER_NAME = "python-controller"
 THREAD_COUNT = 1
 
-# Set XMRIG_PATH to "xmrig.exe" if it is on PATH, or to a full Windows path.
-XMRIG_PATH = "xmrig.exe"
+# Set XMRIG_PATH based on OS
+if os.name == 'nt':  # Windows
+    XMRIG_PATH = os.getenv("XMRIG_PATH", "xmrig.exe")
+else:  # Linux/macOS
+    XMRIG_PATH = os.getenv("XMRIG_PATH", "/app/xmrig/xmrig")
+
 XMRIG_API_HOST = "127.0.0.1"
 XMRIG_API_PORT = 18080
 
@@ -56,8 +60,8 @@ XMRIG_API_PORT = 18080
 # stored in this source file:
 #   set TELEGRAM_BOT_TOKEN=123456:replace_me
 #   set TELEGRAM_CHAT_ID=123456789
-TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8883850768:AAGIuRKdFPE70y_JEixvAuWwKqt0Yg7RJYA")
-TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "8816004505")
+TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "")
+TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
 
 STATUS_INTERVAL = 5
 TELEGRAM_STATUS_INTERVAL = 60
